@@ -1,5 +1,5 @@
 {
-  "name": "emojs",
+  "name": "emo",
   "version": "1.0.0",
   "scripts": {
     "eslint": "npx eslint *.js",
