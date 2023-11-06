@@ -1,10 +1,13 @@
-document.addEventListener("selectionchange", () => {
-    const selectionText = window.getSelection().toString();
-    if (selectionText) chrome.runtime.sendMessage({ text: selectionText });
-});
-
 chrome.runtime.onMessage.addListener(async (message) => {
-    if (message.command == "copy") {
-        navigator.clipboard.writeText()
-    }
+  if (message.command == "select") {
+    const selectedText = window.getSelection().toString();
+    if (!selectedText) return;
+    await chrome.runtime.sendMessage({ text: selectedText });
+  }
+
+  if (message.command == "copy") {
+    const emoText = message.text;
+    if (!emoText) return;
+    navigator.clipboard.writeText(emoText);
+  }
 });
