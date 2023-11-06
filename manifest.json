@@ -1,28 +1,31 @@
 {
-    "name": "emojs",
-    "version": "1.0",
-    "manifest_version": 3,
-    "background": {
-        "service_worker": "background.js"
-    },
-    "permissions": [
-        "tabs"
-    ],
-    "commands": {
-        "emotion": {
-            "suggested_key": "Alt+E",
-            "description": "Emotionalize"
-        }
-    },
-    "content_scripts": [
-        {
-            "matches": [
-                "https://*/*",
-                "https://*/*"
-            ],
-            "js": [
-                "main.js"
-            ]
-        }
-    ]
+  "name": "emojs",
+  "version": "1.0",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": [
+    "tabs"
+  ],
+  "commands": {
+    "emotion": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+E",
+        "mac": "Command+E"
+      },
+      "description": "Emotionalize"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*/*",
+        "https://*/*"
+      ],
+      "js": [
+        "main.js"
+      ]
+    }
+  ]
 }

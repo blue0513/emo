@@ -1,9 +1,9 @@
 const NORMAL_EMOTION = [".", "。"];
 const QUESTION_EMOTION = ["?", "？"];
 const GOOD_EMOTION = [
-  ...Array(5).fill("。"),
+  ...Array(3).fill("。"),
   ...Array(2).fill("！"),
-  ...Array(2).fill("〜"),
+  ...Array(2).fill("〜。"),
   "😀",
   "👌",
   "🤝",
@@ -11,16 +11,22 @@ const GOOD_EMOTION = [
 ];
 const GOOD_QUESTION_EMOTION = [...Array(5).fill("？"), "？👀", "？🤔"];
 
-function randomElement(arry) {
-  return arry[Math.floor(Math.random() * arry.length)];
-}
+// message from content script
+chrome.runtime.onMessage.addListener((message) => {
+  const { text } = message;
+  const emoText = emotionalize(text);
+  sendCopyCommand(emoText);
+});
 
-async function activeTab() {
-  const tabs = await chrome.tabs.query({ active: true, currentWindow: true });
-  if (!!tabs && !!tabs[0]) {
-    return tabs[0];
+// message from user action
+chrome.commands.onCommand.addListener(async (command) => {
+  switch (command) {
+    case "emotion": {
+      sendSelectCommand();
+      break;
+    }
   }
-}
+});
 
 function emotionalize(text) {
   const emoText = text
@@ -53,17 +59,13 @@ async function sendSelectCommand() {
   }
 }
 
-chrome.runtime.onMessage.addListener((message) => {
-  const { text } = message;
-  const emoText = emotionalize(text);
-  sendCopyCommand(emoText);
-});
+function randomElement(arry) {
+  return arry[Math.floor(Math.random() * arry.length)];
+}
 
-chrome.commands.onCommand.addListener(async (command) => {
-  switch (command) {
-    case "emotion": {
-      sendSelectCommand();
-      break;
-    }
+async function activeTab() {
+  const tabs = await chrome.tabs.query({ active: true, currentWindow: true });
+  if (!!tabs && !!tabs[0]) {
+    return tabs[0];
   }
-});
+}
