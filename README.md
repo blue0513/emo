@@ -1,5 +1,8 @@
 ## emo
 
+Selected passage will be enhanced with heightened emotions.  
+It promptly saved to your clipboard.
+
 ## Usage
 
 1. Just follow [official instruction](https://developer.chrome.com/docs/extensions/) and install this extension
