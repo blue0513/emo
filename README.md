@@ -1,4 +1,6 @@
-## emo
+# emo
+
+[![CI](https://github.com/blue0513/emo/actions/workflows/ci.yml/badge.svg)](https://github.com/blue0513/emo/actions/workflows/ci.yml)
 
 Selected passage will be enhanced with heightened emotions.  
 It promptly saved to your clipboard.
