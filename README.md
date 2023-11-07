@@ -16,3 +16,9 @@
 | shortcut          | action                         |
 |-------------------|--------------------------------|
 | Ctrl+Shift+E (macOS: Command+E)     | Emotionalize text and Copy     |
+
+## Customize :laughing:
+
+You can control the frequency of emoji appearances:
+
+<img width="308" src="https://github.com/blue0513/emo/assets/8979468/f5ae7743-8e4c-4a72-bf9e-8f833a8d56fe">
