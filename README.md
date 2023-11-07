@@ -4,7 +4,7 @@
 
 :+1: Add positive emotions to the text :tada:
 
-<img width="732" src="https://github.com/blue0513/emo/assets/8979468/25d1fd24-8000-4b81-ac8a-8d90c002992c">
+<img width="732" src="https://github.com/blue0513/emo/assets/8979468/27b72317-d8d3-419e-a04b-307ee3eae4e1">
 
 ## Usage :smile:
 
@@ -21,4 +21,4 @@
 
 You can control the frequency of emoji appearances:
 
-<img width="308" src="https://github.com/blue0513/emo/assets/8979468/f5ae7743-8e4c-4a72-bf9e-8f833a8d56fe">
+<img width="308" src="https://github.com/blue0513/emo/assets/8979468/3603b6d0-1f3f-4946-8de3-6872e928913d">
