@@ -2,10 +2,10 @@
   "name": "emo",
   "version": "1.0.0",
   "scripts": {
-    "eslint": "npx eslint *.js",
-    "eslint-fix": "npx eslint --fix *.js",
-    "prettier": "npx prettier --check *.js",
-    "prettier-fix": "npx prettier --write *.js",
+    "eslint": "npx eslint src/*.js",
+    "eslint-fix": "npx eslint --fix src/*.js",
+    "prettier": "npx prettier --check src/*.js",
+    "prettier-fix": "npx prettier --write src/*.js",
     "fix-all": "npm run eslint-fix && npm run prettier-fix",
     "check-all": "npm run eslint && npm run prettier"
   },

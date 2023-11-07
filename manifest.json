@@ -3,7 +3,7 @@
   "version": "1.0",
   "manifest_version": 3,
   "background": {
-    "service_worker": "background.js"
+    "service_worker": "src/background.js"
   },
   "permissions": [
     "tabs",
@@ -25,7 +25,7 @@
         "https://*/*"
       ],
       "js": [
-        "main.js"
+        "src/main.js"
       ]
     }
   ],
