@@ -1,17 +1,18 @@
-# emo
+# emo ❤️
 
 [![CI](https://github.com/blue0513/emo/actions/workflows/ci.yml/badge.svg)](https://github.com/blue0513/emo/actions/workflows/ci.yml)
 
-Selected passage will be enhanced with heightened emotions.  
-It promptly saved to your clipboard.
+:+1: Add positive emotions to the text :tada:
 
-## Usage
+<img width="732" src="https://github.com/blue0513/emo/assets/8979468/25d1fd24-8000-4b81-ac8a-8d90c002992c">
+
+## Usage :smile:
 
 1. Just follow [official instruction](https://developer.chrome.com/docs/extensions/) and install this extension
-1. Just select text and `Command + E`
+1. Just select text and trigger shortcuts
 
-### Shortcuts
+## Shortcuts :handshake:
 
 | shortcut          | action                         |
 |-------------------|--------------------------------|
-| `Command + E`     | Emotionalize text and Copy     |
+| Ctrl+Shift+E (macOS: Command+E)     | Emotionalize text and Copy     |
