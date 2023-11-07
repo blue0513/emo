@@ -1,20 +1,12 @@
+const EMO_EMOTION_KEY = "emoEmotionKey";
 const NORMAL_EMOTION = [".", "。"];
-const QUESTION_EMOTION = ["?", "？"];
-const GOOD_EMOTION = [
-  ...Array(3).fill("。"),
-  ...Array(2).fill("！"),
-  ...Array(2).fill("〜。"),
-  "😀",
-  "👌",
-  "🤝",
-  "👍",
-];
-const GOOD_QUESTION_EMOTION = [...Array(5).fill("？"), "？👀", "？🤔"];
+const GOOD_EMOTION = ["😀", "👌", "🤝", "👍"];
 
 // message from content script
-chrome.runtime.onMessage.addListener((message) => {
+chrome.runtime.onMessage.addListener(async (message) => {
   const { text } = message;
-  const emoText = emotionalize(text);
+  const goodEmotions = await restoreGoodEmotions();
+  const emoText = emotionalize(text, goodEmotions);
   sendCopyCommand(emoText);
 });
 
@@ -28,15 +20,12 @@ chrome.commands.onCommand.addListener(async (command) => {
   }
 });
 
-function emotionalize(text) {
+function emotionalize(text, goodEmotions) {
   const emoText = text
     .split("")
     .map((c) => {
       if (NORMAL_EMOTION.includes(c)) {
-        return randomElement(GOOD_EMOTION);
-      }
-      if (QUESTION_EMOTION.includes(c)) {
-        return randomElement(GOOD_QUESTION_EMOTION);
+        return randomElement(goodEmotions);
       }
       return c;
     })
@@ -68,4 +57,12 @@ async function activeTab() {
   if (!!tabs && !!tabs[0]) {
     return tabs[0];
   }
+}
+
+async function restoreGoodEmotions() {
+  const maybeGoodEmotions = await chrome.storage.local.get(EMO_EMOTION_KEY);
+  if (!!maybeGoodEmotions && !!maybeGoodEmotions[EMO_EMOTION_KEY]) {
+    return maybeGoodEmotions[EMO_EMOTION_KEY].split(",");
+  }
+  return GOOD_EMOTION;
 }

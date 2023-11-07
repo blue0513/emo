@@ -6,7 +6,8 @@
     "service_worker": "background.js"
   },
   "permissions": [
-    "tabs"
+    "tabs",
+    "storage"
   ],
   "commands": {
     "emotion": {
@@ -28,6 +29,10 @@
       ]
     }
   ],
+  "options_ui": {
+    "page": "option.html",
+    "open_in_tab": false
+  },
   "icons": {
     "16": "favicon/favicon16.png",
     "32": "favicon/favicon32.png",
